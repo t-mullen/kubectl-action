@@ -17,7 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
       - name: Trigger deploy
         uses: t-mullen/tmullen-kubectl-action@master
         env:
@@ -39,8 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: 
-      figure AWS Credentials
+      - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
