@@ -1,4 +1,4 @@
-kubernetes-action
+kubectl-action
 =============
 Interacts with kubernetes clusters calling `kubectl` commands. Integrates support for **AWS EKS**.
 
@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Trigger deploy
-        uses: t-mullen/tmullen-kubectl-action@master
+        uses: t-mullen/kubectl-action@master
         env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
@@ -46,7 +46,7 @@ jobs:
           aws-region: us-east-1
 
       - name: Trigger deploy
-        uses: t-mullen/tmullen-kubectl-action@master
+        uses: t-mullen/kubectl-action@master
         env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
@@ -84,7 +84,7 @@ Make sure your users has the proper IAM permissions to access your cluster and t
 ```yaml
       - name: Save container image
         id: image-save
-        uses: t-mullen/tmullen-kubectl-action@master
+        uses: t-mullen/kubectl-action@master
         env:
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
